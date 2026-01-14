@@ -1,0 +1,202 @@
+/* ==========================================
+   ANALOG CLOCK COMPONENT STYLES
+   ==========================================
+   
+   This CSS file contains all styles for the analog clock component.
+   Organized in logical sections for easy maintenance.
+*/
+
+/* ==========================================
+   CLOCK CONTAINER
+   ==========================================
+   Main wrapper that provides the card-like appearance
+   and hover effects for the entire clock
+*/
+.clock-container {
+  width: 250px;
+  min-height: 230px;
+  /* Gradient background for visual depth */
+  background: linear-gradient(135deg, #444, #555);
+  box-sizing: border-box;
+  padding: 24px 16px 16px 16px;
+  border-radius: 16px;
+  /* Layered shadows for depth and subtle inner highlight */
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  /* Smooth hover animation */
+  transition: transform 0.2s ease;
+}
+
+/* Subtle lift effect on hover for interactivity */
+.clock-container:hover {
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   CLOCK FACE
+   ==========================================
+   The circular white face of the clock with border
+   and subtle inner shadow for realism
+*/
+.clock-circle {
+  position: relative; /* Positioning context for absolute children */
+  width: 220px;
+  height: 220px;
+  border: 8px solid #333; /* Dark border for definition */
+  border-radius: 50%; /* Perfect circle */
+  /* Radial gradient for subtle depth on clock face */
+  background: radial-gradient(circle, #fff 0%, #f8f8f8 100%);
+  margin: auto; /* Center within container */
+  /* Inner shadow for realistic depth */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================
+   CLOCK HANDS
+   ==========================================
+   All hands share common positioning and animation properties
+   Individual hands have specific sizing and colors
+*/
+.clock-hand {
+  position: absolute;
+  left: 50%; /* Start from center */
+  bottom: 50%; /* Anchor at center bottom */
+  transform-origin: bottom center; /* Rotate around bottom center point */
+  /* Smooth transitions for hand movements */
+  transition: transform 0.1s ease-out;
+  border-radius: 2px; /* Slightly rounded ends */
+}
+
+/* Hour hand - shortest and thickest for easy identification */
+.clock-hour-hand {
+  width: 8px;
+  height: 50px;
+  /* Gradient for visual depth */
+  background: linear-gradient(180deg, #333, #666);
+  transform: translateX(-50%) rotate(0deg); /* Default position */
+  z-index: 3; /* Above minute hand, below second hand */
+}
+
+/* Minute hand - medium size, positioned between hour and second */
+.clock-minute-hand {
+  width: 4px;
+  height: 70px;
+  /* Lighter gradient to differentiate from hour hand */
+  background: linear-gradient(180deg, #666, #999);
+  transform: translateX(-50%) rotate(0deg);
+  z-index: 2; /* Below hour and second hands */
+}
+
+/* Second hand - thinnest and longest, with distinctive red color */
+.clock-second-hand {
+  width: 2px;
+  height: 90px;
+  /* Red gradient for traditional clock appearance */
+  background: linear-gradient(180deg, #e74c3c, #c0392b);
+  transform: translateX(-50%) rotate(0deg);
+  z-index: 4; /* Highest z-index - always on top */
+  /* Faster transition for responsive second hand movement */
+  transition: transform 0.05s ease-out;
+}
+
+/* ==========================================
+   HOUR NUMBERS
+   ==========================================
+   Numbers 1-12 positioned around clock face
+*/
+.clock-number {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-weight: bold;
+  color: #333; /* Dark text for contrast against white face */
+  font-size: 16px;
+  user-select: none; /* Prevent text selection */
+  /* Subtle text shadow for better readability */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================
+   CENTER DOT
+   ==========================================
+   Central pivot point where all hands meet
+*/
+.clock-middle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  /* Radial gradient for realistic 3D appearance */
+  background: radial-gradient(circle, #000, #333);
+  border: 2px solid #fff; /* White border for definition */
+  border-radius: 50%;
+  height: 16px;
+  width: 16px;
+  transform: translate(-50%, -50%);
+  z-index: 5; /* Highest z-index - always visible on top */
+  /* Drop shadow for realistic depth */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================
+   TICK MARKS
+   ==========================================
+   60 small marks around the clock face
+   Every 5th mark is emphasized as an hour mark
+*/
+.clock-tick {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1px;
+  height: 8px;
+  background: #ccc; /* Light gray for minute marks */
+  border-radius: 1px;
+}
+
+/* Hour marks (12, 1, 2, 3, etc.) are larger and darker */
+.clock-tick.hour-mark {
+  height: 16px; /* Twice as tall as regular ticks */
+  background: #333; /* Dark color to match hour numbers */
+  width: 3px; /* Thicker for better visibility */
+  border-radius: 2px;
+}
+
+/* ==========================================
+   ACCESSIBILITY
+   ==========================================
+   Screen reader only content - visually hidden but
+   accessible to assistive technologies
+*/
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ==========================================
+   Adjustments for smaller screens and mobile devices
+*/
+@media (max-width: 300px) {
+  .clock-container {
+    width: 200px; /* Smaller container for mobile */
+    padding: 16px 12px 12px 12px; /* Reduced padding */
+  }
+
+  .clock-circle {
+    width: 180px; /* Proportionally smaller clock face */
+    height: 180px;
+  }
+
+  .clock-number {
+    font-size: 14px; /* Smaller font for mobile readability */
+  }
+}
