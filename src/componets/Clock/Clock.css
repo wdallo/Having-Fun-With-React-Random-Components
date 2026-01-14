@@ -1,0 +1,139 @@
+/* Clock Container */
+.clock-container {
+  width: 250px;
+  min-height: 230px;
+  background: linear-gradient(135deg, #444, #555);
+  box-sizing: border-box;
+  padding: 24px 16px 16px 16px;
+  border-radius: 16px;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.clock-container:hover {
+  transform: translateY(-2px);
+}
+
+/* Clock Face */
+.clock-circle {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  border: 8px solid #333;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff 0%, #f8f8f8 100%);
+  margin: auto;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Clock Hands */
+.clock-hand {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform-origin: bottom center;
+  transition: transform 0.1s ease-out;
+  border-radius: 2px;
+}
+
+.clock-hour-hand {
+  width: 8px;
+  height: 50px;
+  background: linear-gradient(180deg, #333, #666);
+  transform: translateX(-50%) rotate(0deg);
+  z-index: 3;
+}
+
+.clock-minute-hand {
+  width: 4px;
+  height: 70px;
+  background: linear-gradient(180deg, #666, #999);
+  transform: translateX(-50%) rotate(0deg);
+  z-index: 2;
+}
+
+.clock-second-hand {
+  width: 2px;
+  height: 90px;
+  background: linear-gradient(180deg, #e74c3c, #c0392b);
+  transform: translateX(-50%) rotate(0deg);
+  z-index: 4;
+  transition: transform 0.05s ease-out;
+}
+
+/* Hour Numbers */
+.clock-number {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  font-weight: bold;
+  color: #333;
+  font-size: 16px;
+  user-select: none;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Center Dot */
+.clock-middle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: radial-gradient(circle, #000, #333);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  height: 16px;
+  width: 16px;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Tick Marks */
+.clock-tick {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1px;
+  height: 8px;
+  background: #ccc;
+  border-radius: 1px;
+}
+
+.clock-tick.hour-mark {
+  height: 16px;
+  background: #333;
+  width: 3px;
+  border-radius: 2px;
+}
+
+/* Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 300px) {
+  .clock-container {
+    width: 200px;
+    padding: 16px 12px 12px 12px;
+  }
+
+  .clock-circle {
+    width: 180px;
+    height: 180px;
+  }
+
+  .clock-number {
+    font-size: 14px;
+  }
+}
