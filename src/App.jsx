@@ -1,6 +1,7 @@
 import "./App.css";
 import Calculator from "./componets/Calculator/Calculator";
 import Clock from "./componets/Clock/Clock";
+import CurrencyConverter from "./componets/CurrencyConverter/CurrencyConverter";
 import PaperRockScissors from "./componets/PaperRockScissors/PaperRockScissors";
 import WeatherWidget from "./componets/WeatherWidget/WeatherWidget";
 function App() {
@@ -9,7 +10,8 @@ function App() {
       {/* <Calculator /> */}
       {/* <Clock /> */}
       {/* <PaperRockScissors /> */}
-      <WeatherWidget />
+      {/* <WeatherWidget /> */}
+      <CurrencyConverter />
     </>
   );
 }
