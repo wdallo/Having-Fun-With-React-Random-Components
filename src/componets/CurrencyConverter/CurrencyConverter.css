@@ -1,0 +1,102 @@
+/* Container styling */
+.currency-converter-container {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  max-width: 400px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: "Arial", sans-serif;
+}
+
+/* Heading styling */
+.currency-converter-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  color: #333;
+}
+
+/* Label styling */
+.currency-converter-container label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Input and select styling */
+.currency-converter-container select,
+.currency-converter-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.currency-converter-container select:focus,
+.currency-converter-container input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Button styling */
+.currency-converter-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.currency-converter-container button:hover {
+  background-color: #0056b3;
+}
+
+.currency-converter-container button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Result styling */
+.currency-converter-container .result {
+  margin-top: 20px;
+  font-size: 1.4em;
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Error message styling */
+.currency-converter-container .error {
+  margin-top: 10px;
+  color: #d9534f;
+  font-size: 0.9em;
+  text-align: center;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+  .currency-converter-container {
+    padding: 15px;
+    max-width: 90%;
+  }
+
+  .currency-converter-container h2 {
+    font-size: 1.5em;
+  }
+
+  .currency-converter-container button {
+    font-size: 0.9em;
+  }
+}
