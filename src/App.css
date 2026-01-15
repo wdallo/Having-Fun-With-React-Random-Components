@@ -4,7 +4,14 @@
   padding: 2rem;
   text-align: center;
 }
-
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 0;
+}
 .logo {
   height: 6em;
   padding: 1.5em;
