@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 import Calculator from "./componets/Calculator/Calculator";
 import Card from "./componets/Card/Card";
@@ -5,6 +6,8 @@ import Clock from "./componets/Clock/Clock";
 import CurrencyConverter from "./componets/CurrencyConverter/CurrencyConverter";
 import PaperRockScissors from "./componets/PaperRockScissors/PaperRockScissors";
 import WeatherWidget from "./componets/WeatherWidget/WeatherWidget";
+import ImageGalleryTest from "./componets/ImageGallery/ImageGalleryTest";
+
 function App() {
   return (
     <>
@@ -14,11 +17,12 @@ function App() {
       {/* <WeatherWidget /> */}
       {/* <CurrencyConverter /> */}
 
-      <div className="card-list">
+      {/* <div className="card-list">
         {[...Array(6)].map((_, i) => (
           <Card key={i} />
         ))}
-      </div>
+      </div> */}
+      <ImageGalleryTest />
     </>
   );
 }
