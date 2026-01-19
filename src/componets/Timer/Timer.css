@@ -1,0 +1,50 @@
+.timer-container {
+  width: 270px;
+  min-height: 250px;
+  background: linear-gradient(135deg, #232526 0%, #414345 100%);
+  box-sizing: border-box;
+  padding: 28px 18px 18px 18px;
+  border-radius: 22px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.25),
+    0 1.5px 0 rgba(255, 255, 255, 0.08) inset;
+  transition: transform 0.2s cubic-bezier(0.4, 2, 0.6, 1);
+}
+
+.timer-circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: 8px solid #444;
+  border-radius: 50%;
+  background: radial-gradient(circle at 60% 40%, #f9fafb 70%, #e2e2e2 100%);
+  margin: 0 auto 18px auto;
+  box-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.08),
+    0 0 0 4px #232526 inset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timer-screen {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: linear-gradient(90deg, #232526 0%, #393939 100%);
+  border: 3px solid #444;
+  color: #f8f8f8;
+  font-family: "Roboto Mono", "Consolas", monospace;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  height: 48px;
+  width: 140px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -80%);
+  user-select: none;
+}
