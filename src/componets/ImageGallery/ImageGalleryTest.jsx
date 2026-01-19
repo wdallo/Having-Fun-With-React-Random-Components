@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 // Import the ImageGallery component to display individual images
 import ImageGallery from "./ImageGallery";
+import ImageGallerySkeleton from "./ImageGallerySkeleton";
 
 // ImageGalleryTest component displays a list of images with infinite scroll
 const ImageGalleryTest = () => {
@@ -18,6 +19,13 @@ const ImageGalleryTest = () => {
 
   // State to track how many images are currently visible
   const [visibleCount, setVisibleCount] = useState(6);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    ///Simulate loading ex. 1 sec
+    const timer = setTimeout(() => setLoading(false), 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   // Effect to handle infinite scroll: loads more images when user scrolls near the bottom
   useEffect(() => {
@@ -43,9 +51,13 @@ const ImageGalleryTest = () => {
       {/* Container for the image gallery cards */}
       <div className="card-list">
         {/* Render only the visible images */}
-        {images.slice(0, visibleCount).map((src, i) => (
-          <ImageGallery key={i} src={src} />
-        ))}
+        {loading ? (
+          <ImageGallerySkeleton count={images.length} />
+        ) : (
+          images
+            .slice(0, visibleCount)
+            .map((src, i) => <ImageGallery key={i} src={src} />)
+        )}
       </div>
     </>
   );
