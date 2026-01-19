@@ -7,6 +7,7 @@ import CurrencyConverter from "./componets/CurrencyConverter/CurrencyConverter";
 import PaperRockScissors from "./componets/PaperRockScissors/PaperRockScissors";
 import WeatherWidget from "./componets/WeatherWidget/WeatherWidget";
 import ImageGalleryTest from "./componets/ImageGallery/ImageGalleryTest";
+import Timer from "./componets/Timer/Timer";
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
           <Card key={i} />
         ))}
       </div> */}
-      <ImageGalleryTest />
+      {/* <ImageGalleryTest /> */}
+      <Timer />
     </>
   );
 }
