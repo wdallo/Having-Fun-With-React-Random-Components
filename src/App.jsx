@@ -8,16 +8,17 @@ import PaperRockScissors from "./componets/PaperRockScissors/PaperRockScissors";
 import WeatherWidget from "./componets/WeatherWidget/WeatherWidget";
 import ImageGalleryTest from "./componets/ImageGallery/ImageGalleryTest";
 import Timer from "./componets/Timer/Timer";
+import ConnectionStatus from "./componets/ConnectionStatus/ConnectionStatus";
 
 function App() {
   return (
     <>
+      <ConnectionStatus />
       {/* <Calculator /> */}
       {/* <Clock /> */}
       {/* <PaperRockScissors /> */}
       {/* <WeatherWidget /> */}
       {/* <CurrencyConverter /> */}
-
       {/* <div className="card-list">
         {[...Array(6)].map((_, i) => (
           <Card key={i} />
