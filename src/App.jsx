@@ -10,6 +10,7 @@ import ImageGalleryTest from "./componets/ImageGallery/ImageGalleryTest";
 import Timer from "./componets/Timer/Timer";
 import ConnectionStatus from "./componets/ConnectionStatus/ConnectionStatus";
 import ButtonWithLoader from "./componets/ButtonWithLoader/ButtonWithLoader";
+import VideoPlayer from "./componets/VideoPlayer/VideoPlayer";
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
       </div> */}
       {/* <ImageGalleryTest /> */}
       {/* <Timer /> */}
-      <ButtonWithLoader
+      {/* <ButtonWithLoader
         onClick={async () => {
           await new Promise((resolve) => setTimeout(resolve, 2000));
           console.log("Async operation completed!");
@@ -35,7 +36,8 @@ function App() {
         loadingText="Please wait..."
       >
         Click Me
-      </ButtonWithLoader>
+      </ButtonWithLoader> */}
+      <VideoPlayer />
     </>
   );
 }
